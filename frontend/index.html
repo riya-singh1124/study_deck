@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Study Desk — Flashcards, done right</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ========================= HEADER ========================= -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="#top">
+        <!-- Original logo: two overlapping rounded cards -->
+        <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+          <defs>
+            <linearGradient id="lgA" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#38B7FF"/>
+              <stop offset="1" stop-color="#3E91FF"/>
+            </linearGradient>
+            <linearGradient id="lgB" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7A3DFF"/>
+              <stop offset="1" stop-color="#581DFF"/>
+            </linearGradient>
+          </defs>
+          <rect x="4" y="9" width="22" height="27" rx="5" fill="url(#lgA)" transform="rotate(-10 15 22)"/>
+          <rect x="14" y="6" width="22" height="27" rx="5" fill="url(#lgB)" transform="rotate(8 25 19)"/>
+          <circle cx="25" cy="15" r="2.4" fill="#fff" opacity="0.9"/>
+        </svg>
+        <span>Study Desk</span>
+      </a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#goals">Goals</a>
+        <a href="#testimonial">Reviews</a>
+      </nav>
+      <div id="user-bar" class="user-bar">
+        <button class="btn ghost sm" id="cta-login-nav">Sign in</button>
+        <button class="btn primary sm" id="cta-signup-nav">Get started</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================= LANDING / AUTH ========================= -->
+  <section id="auth-view" class="view landing">
+    <!-- HERO -->
+    <div class="container hero" id="top">
+      <div class="hero-copy">
+        <h1>Study Desk<br/><span class="grad-text">Learn more, stress less.</span></h1>
+        <p class="lede">
+          Crush exams, master languages, memorise anything — with the
+          science-backed magic of active recall. Build your own decks or
+          share them with friends.
+        </p>
+        <div class="hero-cta">
+          <button class="btn primary lg" id="cta-signup">Start learning — it's free</button>
+        </div>
+        <p class="hero-note">✨ Add questions, answers, code and equations. No credit card needed.</p>
+      </div>
+
+      <!-- Decorative floating flashcards -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="fc fc-1 tint-blue">
+          <span class="badge">Anatomy</span>
+          <h4>Which muscle abducts the arm?</h4>
+          <p class="fc-a">Deltoid</p>
+        </div>
+        <div class="fc fc-2 tint-purple">
+          <span class="badge purple">Physics</span>
+          <h4>Newton's 2nd law?</h4>
+          <p class="fc-a eq">F = m·a</p>
+        </div>
+        <div class="fc fc-3 tint-teal">
+          <span class="badge teal">Python</span>
+          <h4>Reverse a list?</h4>
+          <pre>list(reversed(xs))</pre>
+        </div>
+        <div class="fc fc-4 tint-pink">
+          <span class="badge pink">Español</span>
+          <h4>"To learn"?</h4>
+          <p class="fc-a">aprender</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS BANNER -->
+    <div class="container">
+      <div class="stats-banner">
+        <div>
+          <h3><b>9 of 10 students</b> remember more with active recall.*</h3>
+          <p class="muted">Based on decades of cognitive-science research on spaced repetition.</p>
+          <button class="btn primary" id="cta-signup-stats">Try for free</button>
+        </div>
+        <div class="stats-orb">
+          <div class="orb-a"></div>
+          <div class="orb-b"></div>
+          <div class="orb-c"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTH CARD (revealed by CTA) -->
+    <div class="container auth-wrap hidden" id="auth-wrap">
+      <div class="auth-card">
+        <h2 id="auth-title">Create your account</h2>
+        <p class="muted" id="auth-sub">Start building decks in seconds.</p>
+        <form id="auth-form">
+          <label>Email <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" /></label>
+          <label>Password <input type="password" name="password" required minlength="6" autocomplete="current-password" placeholder="At least 6 characters" /></label>
+          <button type="submit" id="auth-submit" class="btn primary block">Get started</button>
+        </form>
+        <p class="switch"><a href="#" id="auth-toggle">Already have an account? Sign in</a></p>
+        <p class="error" id="auth-error"></p>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="container" id="features">
+      <h2 class="section-title"><b>Study smart</b> with Study Desk</h2>
+
+      <div class="feature-grid">
+        <a class="feat-card feat-green">
+          <div class="feat-text">
+            <h3><b>Create flashcards</b> the way you want</h3>
+            <p>Questions, answers, code blocks and equations — all in one card.</p>
+            <span class="feat-link">Create flashcards →</span>
+          </div>
+          <div class="feat-illustration">
+            <div class="mini-fc a">Q: What is a JWT?</div>
+            <div class="mini-fc b">A: A signed token</div>
+          </div>
+        </a>
+
+        <a class="feat-card feat-orange">
+          <div class="feat-text">
+            <h3>Organise into <b>unlimited decks</b></h3>
+            <p>Group cards by subject, exam, or language — search across all of them.</p>
+            <span class="feat-link">Explore decks →</span>
+          </div>
+          <div class="feat-illustration decks">
+            <div class="mini-deck">📚 Anatomy</div>
+            <div class="mini-deck">🔬 Biology</div>
+            <div class="mini-deck">💻 Algorithms</div>
+          </div>
+        </a>
+
+        <a class="feat-card feat-pink wide">
+          <div class="feat-text">
+            <h3><b>Create and share</b> decks with friends</h3>
+            <p>Send a deck to a classmate by email — permissions are enforced server-side by JWT.</p>
+            <span class="feat-link">Share a deck →</span>
+          </div>
+          <div class="feat-illustration share">
+            <div class="avatar">A</div>
+            <div class="arrow">➜</div>
+            <div class="avatar b">B</div>
+          </div>
+        </a>
+
+        <a class="feat-card feat-blue wide">
+          <div class="feat-text">
+            <h3>Find anything with <b>full-text search</b></h3>
+            <p>One search bar spans every deck and card you have access to.</p>
+            <span class="feat-link">See it in action →</span>
+          </div>
+          <div class="feat-illustration search-preview">
+            <div class="fake-search">🔍 newton</div>
+            <div class="fake-hit"><span class="mini-chip">card</span> Newton's 2nd law?</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- GOALS -->
+    <div class="container" id="goals">
+      <h2 class="section-title"><b>Achieve</b> your goals</h2>
+      <div class="goals-tabs">
+        <button class="goal-tab active" data-goal="exam">✏️ Exam preparation</button>
+        <button class="goal-tab" data-goal="teach">🧳 Teaching others</button>
+        <button class="goal-tab" data-goal="memory">🧠 Remembering info</button>
+        <button class="goal-tab" data-goal="lang">🇬🇧 Language learning</button>
+      </div>
+      <div class="goal-panels">
+        <div class="goal-panel active" data-goal="exam">
+          <h3>Exam preparation</h3>
+          <p>Turn lecture notes into decks the night before, review them the next morning — active recall beats highlighting every time.</p>
+        </div>
+        <div class="goal-panel" data-goal="teach">
+          <h3>Teaching others</h3>
+          <p>Build shareable decks for your students. They log in, see the deck you shared, and can review at their own pace.</p>
+        </div>
+        <div class="goal-panel" data-goal="memory">
+          <h3>Remembering information</h3>
+          <p>From code snippets to historical dates — if it fits on a card, you can memorise it in a fraction of the time.</p>
+        </div>
+        <div class="goal-panel" data-goal="lang">
+          <h3>Language learning</h3>
+          <p>Vocabulary, verb conjugations, idioms. Add the equation field for pronunciation notes and you're set.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL -->
+    <div class="container" id="testimonial">
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <blockquote>
+          Study Desk is my sanity saver. I dump everything I learn into a deck,
+          share it with my study group, and revisit it before every exam. My
+          grades have never been better.
+        </blockquote>
+        <div class="who">
+          <div class="avatar big">S</div>
+          <div>
+            <b>Sam M.</b>
+            <p class="muted">Med student</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="container">
+      <div class="final-cta">
+        <h2>Ready to remember everything?</h2>
+        <button class="btn primary lg" id="cta-signup-bottom">Create your free account</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= APP ========================= -->
+  <section id="app-view" class="view hidden">
+    <div class="container">
+      <div class="toolbar">
+        <div class="search-wrap">
+          <svg viewBox="0 0 20 20" class="search-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 3a6 6 0 1 0 3.7 10.7L17 18M15 9a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/></svg>
+          <input id="search-input" type="search" placeholder="Search decks & cards..." />
+        </div>
+        <button id="new-deck-btn" class="btn primary">+ New deck</button>
+      </div>
+
+      <div id="search-results" class="panel hidden"></div>
+
+      <div class="two-col">
+        <aside class="panel sidebar">
+          <h3>Your decks</h3>
+          <ul id="decks"></ul>
+        </aside>
+        <section id="deck-detail" class="panel deck-detail">
+          <div class="empty">
+            <div class="grad-orb"></div>
+            <h3>No deck selected</h3>
+            <p class="muted">Create your first deck or pick one from the left.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="btn ghost">Cancel</button>
+        <button id="modal-ok" class="btn primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© Study Desk</span>
+      <span class="muted">FastAPI + vanilla JS · Capstone project</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
